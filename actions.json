@@ -3,7 +3,7 @@
     "display_name": "validate VIP users based on phone numbers",
     "description": "Validates if the input phone number is in the VIP list of contacts",
     "parameters": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema",
       "type": "object",
       "properties": {
         "input": {
@@ -22,7 +22,7 @@
     "display_name": "validate when a single digit input is given",
     "description": "validate when a single digit input is given",
     "parameters": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "type": "object",
       "properties": {
         "input": {
@@ -41,7 +41,7 @@
     "display_name": "validate when a multiple digit input is given",
     "description": "validate when a multiple digit input is given",
     "parameters": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "type": "object",
       "properties": {
         "input": {
@@ -60,7 +60,7 @@
     "display_name": "validate when a users speech is transcripted and given as input",
     "description": "validate when a users speech is transcripted and given as input",
     "parameters": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "type": "object",
       "properties": {
         "input": {
@@ -79,7 +79,7 @@
     "display_name": "to send the message to be played as a dynmaic message in Freshcaller",
     "description": "Responds with the order status from third-party system",
     "parameters": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema",
       "type": "object",
       "properties": {
         "input": {

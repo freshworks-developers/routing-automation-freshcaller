@@ -1,49 +1,56 @@
 exports = {
-  validateVIPPhoneNumber: function (request) {    
-    let validVIPNumbers = ['+15684561239','+12587419632'],
-    response = validVIPNumbers.includes(request.input) ? 'valid': 'invalid',
+  validateVIPPhoneNumber: function (args) { 
+    console.log(args);
+    // let validVIPNumbers = ['+15684561239','+12587419632'],
+    // response = validVIPNumbers.includes(args.input) ? 'valid': 'invalid',
     data = {
-      response,
+      response: "valid",
       "app_variables": {}
     };
     
-    return renderData(null, { data });
+    return renderData(null, { data: "valid" });
   },
-  validateUserSingleDigit: function (request) {    
+  validateUserSingleDigit: function (args) {
+    console.log(args);
     let validVIPNumbers = ['1','2'],
-    response = validVIPNumbers.includes(request.input) ? 'valid': 'invalid';
+    response = validVIPNumbers.includes(args.input) ? 'valid': 'invalid';
     // Third party API and response structure
     return renderData(null, { success: true, data: {
       response,
       "app_variables": {}
     }});
   },
-  validateUserMultipleDigits: function (request) {    
+  validateUserMultipleDigits: function (args) {
+    console.log(args);
     let validVIPNumbers = ['11','12'],
-    response = validVIPNumbers.includes(request.input) ? 'valid': 'invalid';
+    response = validVIPNumbers.includes(args.input) ? 'valid': 'invalid';
     
     return renderData(null, { success: true, data: {
       response,
       "app_variables": {}
     }});
   },
-  validateUserSpeech: function (request) {    
+  validateUserSpeech: function (args) {
+    console.log(args);
     let regex = /(transfer)|(call)/,
-    response = regex.test(request.input) ? 'valid': 'invalid';
+    response = regex.test(args.input) ? 'valid': 'invalid';
     
     return renderData(null, { success: true, data: {
       response,
       "app_variables": {}
     }});
   },
-  respondOrderStatus: function () {    
-    let index = Math.floor(Math.random() * Math.max(5));
+  respondOrderStatus: function (args) { 
+    console.log('respondOrderStatus', args);
     
     let name = ['Freshcaller', "Freshdesk", "Freshsales", "Freshchat", "Freshservice"],
-      response = arguments[0].input;
-
-    return renderData(null, { success: true, data: { 
-      response, "app_variables": { "name": name[index], status: "in progress"}
+      response = name[Number.parseInt(args.input)];
+      
+    console.log('response is', response)
+    
+    return renderData(null, {
+      success: true, data: { 
+      response, "app_variables": { "name": name[Number.parseInt(args.input)], status: "in progress"}
      }});
   }
 };
