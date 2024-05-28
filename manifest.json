@@ -1,7 +1,7 @@
 {
-  "platform-version": "2.3",
-  "product": {
-    "freshcaller": {
+  "platform-version": "3.0",
+  "modules": {
+    "common": {
       "functions": {
         "validateVIPPhoneNumber": {
           "timeout": 10
@@ -19,7 +19,8 @@
           "timeout": 10
         }
       }
-    }
+    },
+    "call": {}
   },
   "engines": {
     "node": "18.18.2",
